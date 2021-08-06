@@ -1,14 +1,9 @@
 pipeline{
         agent any
         stages{
-            stage('Make Directory'){
+            stage('handle secretes'){
                 steps{
-                    sh "mkdir ~/jenkins-tutorial-test"
-                }
-            }
-            stage('Make Files'){
-                steps{
-                    sh "touch ~/jenkins-tutorial-test/file1 ~/jenkins-tutorial-test/file2"
+                        sh "docker login -u ${DOCKER_LOGIN_USR} -p ${DOCKER_LOGIN_PSW}"
                 }
             }
         }
