@@ -1,7 +1,7 @@
 pipeline{
         agent any
         environment {
-                DOCKER_LOGIN = $DOCKER_LOGIN
+                DOCKER_LOGIN = credentials("DOCKER_LOGIN")
         }
         stages{
             stage('handle secretes'){
