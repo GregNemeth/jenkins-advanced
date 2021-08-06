@@ -1,5 +1,7 @@
 pipeline{
         agent any
+        environment {
+                DOCKER_LOGIN = $DOCKER_LOGIN
         stages{
             stage('handle secretes'){
                 steps{
